@@ -1,0 +1,1944 @@
+{
+	"info": {
+		"_postman_id": "1885300d-a1d7-480c-a670-92c0dc2a504e",
+		"name": "API_METODOS_CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "crearUsuario",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sa",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apellido\": \"Strange\",\r\n    \"ciudad\": \"Resistencia\",\r\n    \"email\": \"ss@gmail.com\",\r\n    \"fecha\": \"2020-12-12\",\r\n    \"id\": \"\",\r\n    \"nombre\": \"Steven\",\r\n    \"pais\": \"Argentina\",\r\n    \"provincia\": \"Chaco\",\r\n    \"password\": \"11121314\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createuser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crearPost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor\": {\n        \"id\": 9,\n            \"nombre\": \"Leonardo\",\n            \"apellido\": \"Mayer\",\n            \"email\": \"lm@gmail.com\",\n            \"fecha\": \"2020-11-28\",\n            \"ciudad\": \"Corrientes\",\n            \"provincia\": \"Corrientes\",\n            \"pais\": \"Argentina\"\n    },\n    \"contenido\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n    \"descripcion\": \"Las Promises en Javascript, marcan un antes y un después en la historia del desarrollo web moderno\",\n    \"fecha_creacion\": \"2020-09-04\",\n    \"post_id\": \"\",\n    \"publicado\": \"false\",\n    \"titulo\": \"Promises en Javascript 2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/createpost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createpost"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createpost"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createpost"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createpost"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "voluptate ipsum esse dolore"
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createpost"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createpost"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "crearComentario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor\": {\n        \"id\": 1,\n        \"nombre\": \"Alberto\",\n        \"apellido\": \"Einstein\",\n        \"email\": \"ae@gmail.com\",\n        \"fecha\": \"2020-10-01\",\n        \"ciudad\": \"Resistencia\",\n        \"provincia\": \"Chaco\",\n        \"pais\": \"Argentina\"\n    },\n    \"comentario\": \"Muy buen blog, siga así\",\n    \"comment_id\": \"\",\n    \"fecha_creacion\": \"2020-12-24\",\n    \"post\": {\n        \"autor\": {\n            \"id\": 5,\n            \"nombre\": \"Homero\",\n            \"apellido\": \"Simpson\",\n            \"email\": \"hs@gmail.com\",\n            \"fecha\": \"2020-11-05\",\n            \"ciudad\": \"El Colorado\",\n            \"provincia\": \"Formosa\",\n            \"pais\": \"Argentina\"\n        },\n        \"contenido\": \"MVC El enfoque model, view, controller separa nuestra aplicación, a nivel general, en un conjunto de 3 responsabilidades.\",\n        \"descripcion\": \"En los últimos años han surgido diferentes enfoques sobre cómo organizar los proyectos de desarrollo Android\",\n        \"fecha_creacion\": \"2020-05-01\",\n        \"post_id\": \"14\",\n        \"publicado\": \"true\",\n        \"titulo\": \"Android: Qué es MVC, MVP y MVVM\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/createcomment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createcomment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createcomment"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createcomment"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createcomment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "voluptate ipsum esse dolore"
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createcomment"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/createcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"createcomment"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "editarUsuarios",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ciudad\": \"Barranqueras\",\r\n    \"email\": \"ss@gmail.com\",\r\n    \"id\": \"10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/edituser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edituser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editarPosts",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor\": {\n            \"id\": 9,\n            \"nombre\": \"Leonardo\",\n            \"apellido\": \"Mayer\",\n            \"email\": \"lm@gmail.com\",\n            \"fecha\": \"2020-11-28\",\n            \"ciudad\": \"Corrientes\",\n            \"provincia\": \"Corrientes\",\n            \"pais\": \"Argentina\"\n    },\n    \n    \"post_id\": \"32\",    \n    \"titulo\": \"Prueba de edicion de post\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/editpost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editpost"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editpost"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editpost"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editpost"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editpost"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editpost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editpost"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "editarComentario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor\": {\n        \"apellido\": \"<string>\",\n        \"ciudad\": \"<string>\",\n        \"email\": \"<string>\",\n        \"fecha\": \"<date>\",\n        \"id\": \"<integer>\",\n        \"nombre\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"provincia\": \"<string>\"\n    },\n    \"comentario\": \"<string>\",\n    \"comment_id\": \"<integer>\",\n    \"fecha_creacion\": \"<date>\",\n    \"post\": {\n        \"autor\": {\n            \"apellido\": \"<string>\",\n            \"ciudad\": \"<string>\",\n            \"email\": \"<string>\",\n            \"fecha\": \"<date>\",\n            \"id\": \"<integer>\",\n            \"nombre\": \"<string>\",\n            \"pais\": \"<string>\",\n            \"provincia\": \"<string>\"\n        },\n        \"contenido\": \"<string>\",\n        \"descripcion\": \"<string>\",\n        \"fecha_creacion\": \"<date>\",\n        \"post_id\": \"<integer>\",\n        \"publicado\": \"<boolean>\",\n        \"titulo\": \"<string>\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/editcomment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editcomment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editcomment"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editcomment"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editcomment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editcomment"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/editcomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"editcomment"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "eliminarUsuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"id\": \"11\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/deleteuser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminarPost",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor\": {\n        \"id\": 10,\n            \"nombre\": \"Steven\",\n            \"apellido\": \"Strange\",\n            \"email\": \"ss@gmail.com\",\n            \"fecha\": \"2020-12-12\",\n            \"ciudad\": \"Barranqueras\",\n            \"provincia\": \"Chaco\",\n            \"pais\": \"Argentina\"\n    },\n    \"post_id\": \"22\"\n    \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/deletepost",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deletepost"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletepost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletepost"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletepost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletepost"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "voluptate ipsum esse dolore"
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletepost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletepost"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No Content",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletepost",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletepost"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "eliminarComment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"autor\": {\n        \"apellido\": \"<string>\",\n        \"ciudad\": \"<string>\",\n        \"email\": \"<string>\",\n        \"fecha\": \"<date>\",\n        \"id\": \"<integer>\",\n        \"nombre\": \"<string>\",\n        \"pais\": \"<string>\",\n        \"provincia\": \"<string>\"\n    },\n    \"comentario\": \"<string>\",\n    \"comment_id\": \"<integer>\",\n    \"fecha_creacion\": \"<date>\",\n    \"post\": {\n        \"autor\": {\n            \"apellido\": \"<string>\",\n            \"ciudad\": \"<string>\",\n            \"email\": \"<string>\",\n            \"fecha\": \"<date>\",\n            \"id\": \"<integer>\",\n            \"nombre\": \"<string>\",\n            \"pais\": \"<string>\",\n            \"provincia\": \"<string>\"\n        },\n        \"contenido\": \"<string>\",\n        \"descripcion\": \"<string>\",\n        \"fecha_creacion\": \"<date>\",\n        \"post_id\": \"<integer>\",\n        \"publicado\": \"<boolean>\",\n        \"titulo\": \"<string>\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/deletecomment",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"deletecomment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletecomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletecomment"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletecomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletecomment"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletecomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletecomment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "voluptate ipsum esse dolore"
+				},
+				{
+					"name": "No Content",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/deletecomment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"deletecomment"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "mostrarUsuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/showusers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"showusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mostrarPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/showposts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"showposts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showposts"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showposts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showposts"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showposts"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "postsPorPalabra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/titlebywords?word=android",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"titlebywords"
+					],
+					"query": [
+						{
+							"key": "word",
+							"value": "android",
+							"description": "(Required) word"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/titlebywords?word=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"titlebywords"
+							],
+							"query": [
+								{
+									"key": "word",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/titlebywords?word=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"titlebywords"
+							],
+							"query": [
+								{
+									"key": "word",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/titlebywords?word=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"titlebywords"
+							],
+							"query": [
+								{
+									"key": "word",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/titlebywords?word=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"titlebywords"
+							],
+							"query": [
+								{
+									"key": "word",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "usuariosRcia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usersbycity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usersbycity"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbycity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbycity"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbycity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbycity"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbycity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbycity"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbycity",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbycity"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "usuariosPorFecha",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usersbydate?date=2020-11-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usersbydate"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2020-11-01",
+							"description": "(Required) date"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbydate?date=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbydate"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbydate?date=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbydate"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbydate?date=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbydate"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usersbydate?date=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usersbydate"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "<string>"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "mostrarComments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/showcomments?max=2&postid=14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"showcomments"
+					],
+					"query": [
+						{
+							"key": "max",
+							"value": "2",
+							"description": "max"
+						},
+						{
+							"key": "postid",
+							"value": "14",
+							"description": "(Required) postid"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showcomments?max=<integer>&postid=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showcomments"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "<integer>"
+								},
+								{
+									"key": "postid",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showcomments?max=<integer>&postid=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showcomments"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "<integer>"
+								},
+								{
+									"key": "postid",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showcomments?max=<integer>&postid=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showcomments"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "<integer>"
+								},
+								{
+									"key": "postid",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/showcomments?max=<integer>&postid=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"showcomments"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "<integer>"
+								},
+								{
+									"key": "postid",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "mostrarPostsNoPublicados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/unpublishedposts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"unpublishedposts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/unpublishedposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublishedposts"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/unpublishedposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublishedposts"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/unpublishedposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublishedposts"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/unpublishedposts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublishedposts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
